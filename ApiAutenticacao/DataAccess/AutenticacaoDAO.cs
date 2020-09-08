@@ -15,7 +15,7 @@ namespace ApiAutenticacao.DataAccess
             conn.Open();
            
             string strSql = @"SELECT
-                                  COUNT(*)
+                                  COUNT(1) > 0
                               FROM
                                   USUARIO U
                               INNER JOIN PERFIL_MODULO PM ON U.COD_PERFIL = PM.COD_PERFIL
