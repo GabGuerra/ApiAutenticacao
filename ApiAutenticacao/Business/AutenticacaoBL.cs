@@ -7,14 +7,14 @@ using System.Web;
 
 namespace ApiAutenticacao.Business
 {
-    public class AutenticacaoBL
+    public class AutenticacaoBL 
     {
         private AutenticacaoDAO dao;
 
         public AutenticacaoBL()
         {
             dao = new AutenticacaoDAO();
-        }
+        }        
         public ResultadoAutenticacao VerificarPermissao(string cpf, int codModulo)
         {
             ResultadoAutenticacao res = new ResultadoAutenticacao();

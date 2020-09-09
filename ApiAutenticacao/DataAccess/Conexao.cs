@@ -6,12 +6,30 @@ using System.Web;
 
 namespace ApiAutenticacao.DataAccess
 {
-    public class Conexao
+    public class Conexao : IDisposable
     {
+        private static MySqlConnection _conn;
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        //Para sempre fechar conexões após bloco using
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                _conn.Close();
+                _conn.Dispose();
+            }
+        }
+
         public MySqlConnection ObterConexao()
         {
-            MySqlConnection con = new MySqlConnection("server=localhost;database=AUTENTICACAO;uid=root;password=; convert zero datetime=True");
-            return con;
+            if(_conn == null)
+                _conn = new MySqlConnection("server=localhost;database=AUTENTICACAO;uid=root;password=; convert zero datetime=True");
+            return _conn;
         }
     }
 }
