@@ -28,7 +28,7 @@ namespace ApiAutenticacao.DataAccess
         public MySqlConnection ObterConexao()
         {
             if(_conn == null)
-                _conn = new MySqlConnection("server=localhost;database=AUTENTICACAO;uid=root;password=; convert zero datetime=True");
+                _conn = new MySqlConnection("server=localhost;database=AUTENTICACAO;uid=root;password=f75b5vip; convert zero datetime=True");
             return _conn;
         }
     }

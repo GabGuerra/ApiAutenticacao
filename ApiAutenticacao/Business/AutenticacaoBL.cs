@@ -20,6 +20,7 @@ namespace ApiAutenticacao.Business
             ResultadoAutenticacao res = new ResultadoAutenticacao();
             try
             {
+                dao.SalvarHistoricoAutenticao(new HistoricoAutenticacao(cpf,codModulo));
                 res.Sucesso = dao.VerificarPermissao(cpf, codModulo);                
             }
             catch (Exception ex)
@@ -29,8 +30,7 @@ namespace ApiAutenticacao.Business
             }
             res.Mensagem = res.Sucesso ? "Acesso liberado." : "Você não tem permissão para acessar este módulo.";
             return res;
-        }
-         
+        }     
         
 
     }
