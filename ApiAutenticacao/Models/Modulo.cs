@@ -9,5 +9,8 @@ namespace ApiAutenticacao.Models
     {
         public int Codigo { get; set; }
         public string DscModulo { get; set; }
+
+        public Modulo() {
+        }
     }
 }

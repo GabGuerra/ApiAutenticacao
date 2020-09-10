@@ -13,8 +13,10 @@ namespace ApiAutenticacao.Models
         public DateTime DataRegistro { get; set; }
         public HistoricoAutenticacao(string CpfUsuario, int CodModulo)
         {
-            this.Usuario.Cpf = CpfUsuario;
-            this.Modulo.Codigo = CodModulo;        
+            Usuario = new Usuario();
+            Modulo = new Modulo();
+            Usuario.Cpf = CpfUsuario;
+            Modulo.Codigo = CodModulo;        
         }
     }
 

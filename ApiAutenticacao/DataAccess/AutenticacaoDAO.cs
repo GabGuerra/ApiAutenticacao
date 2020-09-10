@@ -43,7 +43,7 @@ namespace ApiAutenticacao.DataAccess
                 conn.Open();
                 string strSql = @" INSERT INTO HISTORICO_AUTENTICACAO 
                                    (CPF, COD_MODULO, DATA_REGISTRO) 
-                                   VALUES (@CPF, @COD_MODULO, CURRENT_DATE)";
+                                   VALUES (@CPF, @COD_MODULO, CURRENT_TIMESTAMP)";
                 using (MySqlCommand sql = new MySqlCommand(strSql, conn))
                 {
                     sql.Parameters.AddWithValue("@CPF", historico.Usuario.Cpf);
